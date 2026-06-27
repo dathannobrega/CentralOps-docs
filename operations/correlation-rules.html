@@ -1,0 +1,220 @@
+<!doctype html><html lang=pt-BR dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-operations/correlation-rules" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.0"><title data-rh=true>Regras de correlação | CentralOps</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://dathannobrega.github.io/CentralOps-docs/img/centralops-social-card.jpg /><meta data-rh=true name=twitter:image content=https://dathannobrega.github.io/CentralOps-docs/img/centralops-social-card.jpg /><meta data-rh=true property=og:url content=https://dathannobrega.github.io/CentralOps-docs/operations/correlation-rules /><meta data-rh=true property=og:locale content=pt_BR /><meta data-rh=true name=docusaurus_locale content=pt-BR /><meta data-rh=true name=docsearch:language content=pt-BR /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Regras de correlação | CentralOps"/><meta data-rh=true name=description content="Detectar padrões cross-source e disparar alertas quando um padrão atinge um limite em uma janela de tempo"/><meta data-rh=true property=og:description content="Detectar padrões cross-source e disparar alertas quando um padrão atinge um limite em uma janela de tempo"/><link data-rh=true rel=icon href=/CentralOps-docs/img/favicon.ico /><link data-rh=true rel=canonical href=https://dathannobrega.github.io/CentralOps-docs/operations/correlation-rules /><link data-rh=true rel=alternate href=https://dathannobrega.github.io/CentralOps-docs/operations/correlation-rules hreflang=pt-BR /><link data-rh=true rel=alternate href=https://dathannobrega.github.io/CentralOps-docs/operations/correlation-rules hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://dathannobrega.github.io/CentralOps-docs/operations/correlation-rules","name":"Regras de correlação","position":1}]}</script><link rel=stylesheet href=/CentralOps-docs/assets/css/styles.2795a4b5.css /><script src=/CentralOps-docs/assets/js/runtime~main.e97a0e67.js defer></script><script src=/CentralOps-docs/assets/js/main.415937d4.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-ddd")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/CentralOps-docs/img/logo.svg /><div role=region aria-label="Pular para o conteúdo principal"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Pular para o conteúdo principal</a></div><nav aria-label="Navegação principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar painel de navegação" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/CentralOps-docs/><div class=navbar__logo><img src=/CentralOps-docs/img/logo.svg alt=CentralOps class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/CentralOps-docs/img/logo.svg alt=CentralOps class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">CentralOps</b></a><a class="navbar__item navbar__link" href=/CentralOps-docs/>Começar</a><a class="navbar__item navbar__link" href=/CentralOps-docs/outputs/overview>Saídas & Rotas</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/CentralOps-docs/operations/dashboard>Operação</a><a class="navbar__item navbar__link" href=/CentralOps-docs/administration/users-and-roles>Administração</a><a class="navbar__item navbar__link" href=/CentralOps-docs/normalization/overview>Mappings</a><a class="navbar__item navbar__link" href=/CentralOps-docs/runbooks/dispatcher>Runbooks</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/CentralOps-docs/operations/correlation-rules>2.0</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/CentralOps-docs/operations/correlation-rules>2.0</a><li><a class=dropdown__link href=/CentralOps-docs/1.7>1.7 (legada)</a></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="modo do sistema" aria-label="Mudar entre modo claro e escuro (modo do sistema está ativo)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class=navbar__search><span aria-label="expand searchbar" role=button class=search-icon tabindex=0></span><input id=search_input_react type=search placeholder=Loading... aria-label=Search class="navbar__search-input search-bar" disabled/></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=docsWrapper_hBAB><button aria-label="Voltar para o topo" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class=sidebarViewport_aRkj><div class=sidebar_njMd><nav aria-label="Painel lateral de documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/CentralOps-docs/operations/dashboard><span title="Operação diária" class=categoryLinkLabel_W154>Operação diária</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/dashboard><span title=Dashboard class=linkLabel_WmDU>Dashboard</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/alerts><span title=Alertas class=linkLabel_WmDU>Alertas</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/quarantine><span title=Quarentena class=linkLabel_WmDU>Quarentena</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/search><span title=Investigações class=linkLabel_WmDU>Investigações</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/federated-search><span title="Busca federada" class=linkLabel_WmDU>Busca federada</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/detections><span title=Detecções class=linkLabel_WmDU>Detecções</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/CentralOps-docs/operations/correlation-rules><span title="Regras de correlação" class=linkLabel_WmDU>Regras de correlação</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/pipeline-health><span title="Saúde do Pipeline" class=linkLabel_WmDU>Saúde do Pipeline</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/history-audit><span title="Histórico e auditoria" class=linkLabel_WmDU>Histórico e auditoria</span></a></ul></ul></nav></div></div></aside><main class=docMainContainer_TBSr><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label=Trilha><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Página Inicial" class=breadcrumbs__link href=/CentralOps-docs/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_YNFT><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Operação diária</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>Regras de correlação</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Versão: 2.0</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">Nesta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Regras de correlação</h1></header>
+<p>Uma <strong>regra de correlação</strong> observa eventos de múltiplas fontes ao mesmo tempo e dispara uma <strong>Detecção</strong> (um alerta de análise) quando um padrão específico acontece. Por exemplo: "se o mesmo IP falhar em fazer login 5 vezes em 5 minutos, abrir uma detecção".</p>
+<p>Diferente dos <a class="" href=/CentralOps-docs/operations/alerts>Alertas</a> (que são eventos já coletados das fontes), as Detecções vêm de análise: correlação, busca em tempo real ou agendamentos. Você gerencia aqui regras de <strong>tipo threshold</strong> — o tipo mais comum. Tipos mais avançados (sequência de eventos, agregações) estão no nosso roadmap.</p>
+<p>Para acessar, use o menu <strong>Conhecimento → Correlação</strong>.</p>
+<p><strong>Quem pode ver:</strong> todos os perfis com acesso de leitura ou superior. Apenas <strong>Engineer</strong> e acima conseguem criar, editar ou excluir regras.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=quando-usar>Quando usar<a href=#quando-usar class=hash-link aria-label="Link direto para Quando usar" title="Link direto para Quando usar" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>Detectar ataque em andamento.</strong> ≥5 tentativas de login falhadas do mesmo origem em poucos minutos? Pode ser brute-force. A regra dispara automaticamente e vira uma Detecção que você triagem na tela de <a class="" href=/CentralOps-docs/operations/detections>Detecções</a>.</li>
+<li class=""><strong>Reduzir ruído.</strong> Em vez de alertar cada evento isolado (cada tentativa falhada é um alerta fraco), agrupe e alerte só quando o padrão fica suspeito.</li>
+<li class=""><strong>Correlação sem query.</strong> Não precisa saber linguagem de busca federada. Preencha um formulário simples: campo para agrupar, limite mínimo, janela de tempo, filtros simples.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=como-funciona-tipo-threshold>Como funciona: tipo threshold<a href=#como-funciona-tipo-threshold class=hash-link aria-label="Link direto para Como funciona: tipo threshold" title="Link direto para Como funciona: tipo threshold" translate=no>​</a></h2>
+<p>A regra <strong>threshold</strong> segue este fluxo:</p>
+<ol>
+<li class=""><strong>Agrupa</strong> eventos por um campo (ex.: <code>source.ip</code>, usando notação de caminho com ponto).</li>
+<li class=""><strong>Filtra</strong> (opcional) — apenas eventos que atendem aos critérios da cláusula <code>where</code>.</li>
+<li class=""><strong>Conta</strong> eventos únicos dentro de uma janela de tempo (ex.: últimos 5 minutos).</li>
+<li class=""><strong>Dispara</strong> — quando a contagem ≥ <code>min_count</code>, emite uma Detecção.</li>
+<li class=""><strong>Suprime</strong> — não dispara novamente pela mesma chave de agrupamento durante a janela de supressão (ex.: 1 hora).</li>
+</ol>
+<p><strong>Exemplo prático:</strong></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Campo<th>Valor<tbody><tr><td><strong>Nome</strong><td>Múltiplas falhas de login do mesmo IP<tr><td><strong>group_by_field</strong><td><code>source.ip</code><tr><td><strong>min_count</strong><td>5<tr><td><strong>window_seconds</strong><td>300 (5 minutos)<tr><td><strong>where</strong><td><code>[{field: "event.category", op: "eq", value: "authentication"}]</code><tr><td><strong>suppression_window_seconds</strong><td>3600 (1 hora)</table>
+<p>Resultado: se 5 ou mais eventos de autenticação vierem do mesmo IP nos últimos 5 minutos, dispara uma Detecção. A mesma regra não dispara novamente para aquele IP pelos próximos 60 minutos.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=permissões>Permissões<a href=#permissões class=hash-link aria-label="Link direto para Permissões" title="Link direto para Permissões" translate=no>​</a></h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Ação<th>Permissão<th>Quem tem<tbody><tr><td>Ver lista de regras<td><code>query.run</code><td>Viewer, Operator, Engineer, Admin<tr><td>Criar / Editar / Excluir regra<td><code>query.save</code><td>Engineer, Admin</table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=a-tela>A tela<a href=#a-tela class=hash-link aria-label="Link direto para A tela" title="Link direto para A tela" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=lista-de-regras>Lista de regras<a href=#lista-de-regras class=hash-link aria-label="Link direto para Lista de regras" title="Link direto para Lista de regras" translate=no>​</a></h3>
+<p>Mostra todas as regras da sua organização:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Coluna<th>O que mostra<tbody><tr><td><strong>Nome</strong><td>Identificador da regra (ex.: "Múltiplas falhas de login").<tr><td><strong>Status</strong><td>Ativa (verde) ou desativada (cinza). Regras desativadas não disparam.<tr><td><strong>Tipo</strong><td>Sempre "threshold" por enquanto.<tr><td><strong>Grupo</strong><td>Campo pelo qual agrupa (ex.: <code>source.ip</code>).<tr><td><strong>Limite</strong><td>Número mínimo de eventos para disparar.<tr><td><strong>Janela</strong><td>Período em segundos no qual conta eventos.<tr><td><strong>Ações</strong><td>Editar, desativar/ativar, ou excluir.</table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=criar-uma-regra>Criar uma regra<a href=#criar-uma-regra class=hash-link aria-label="Link direto para Criar uma regra" title="Link direto para Criar uma regra" translate=no>​</a></h3>
+<ol>
+<li class="">
+<p>Clique em <strong>+ Nova regra</strong>.</p>
+</li>
+<li class="">
+<p>Preencha o formulário:</p>
+<ul>
+<li class=""><strong>Nome</strong>: descrição curta e única (ex.: "Brute-force SSH").</li>
+<li class=""><strong>Descrição</strong> (opcional): mais contexto (ex.: "Múltiplas tentativas falhadas em um curto espaço de tempo").</li>
+<li class=""><strong>Campo de agrupamento</strong>: qual campo usar para agrupar (ex.: <code>source.ip</code>, <code>user.name</code>). Use notação com ponto para campos aninhados.</li>
+<li class=""><strong>Limite mínimo</strong>: quantos eventos no mínimo para disparar (padrão: 5).</li>
+<li class=""><strong>Janela de tempo</strong>: quantos segundos de história examinar (padrão: 300 = 5 min).</li>
+<li class=""><strong>Filtros</strong> (opcional): adicione condições. Exemplo: <code>event.category eq "authentication"</code> — só conta eventos de autenticação.</li>
+<li class=""><strong>Severidade</strong>: nível da Detecção gerada (padrão: High). Escolha entre Low, Medium, High ou Critical.</li>
+<li class=""><strong>Supressão</strong>: quantos segundos para silenciar a regra depois que dispara para a mesma chave (padrão: 3600 = 1 hora).</li>
+</ul>
+</li>
+<li class="">
+<p>Clique <strong>Salvar</strong>. A regra entra em modo ativo.</p>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=editar-uma-regra>Editar uma regra<a href=#editar-uma-regra class=hash-link aria-label="Link direto para Editar uma regra" title="Link direto para Editar uma regra" translate=no>​</a></h3>
+<ol>
+<li class="">Clique no nome da regra ou no botão de editar.</li>
+<li class="">Modifique os campos.</li>
+<li class="">Clique <strong>Salvar</strong>.</li>
+</ol>
+<p>Se a regra está ativa, as mudanças valem imediatamente.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=ativar--desativar>Ativar / Desativar<a href=#ativar--desativar class=hash-link aria-label="Link direto para Ativar / Desativar" title="Link direto para Ativar / Desativar" translate=no>​</a></h3>
+<p>No botão de ações, escolha <strong>Ativar</strong> ou <strong>Desativar</strong>. Regras desativadas não disparam.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=excluir-uma-regra>Excluir uma regra<a href=#excluir-uma-regra class=hash-link aria-label="Link direto para Excluir uma regra" title="Link direto para Excluir uma regra" translate=no>​</a></h3>
+<p>Clique no botão de ações e escolha <strong>Excluir</strong>. A confirmação é pedida antes de remover.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=detecções-geradas>Detecções geradas<a href=#detecções-geradas class=hash-link aria-label="Link direto para Detecções geradas" title="Link direto para Detecções geradas" translate=no>​</a></h2>
+<p>Quando uma regra dispara, é criada uma <strong>Detecção</strong> com:</p>
+<ul>
+<li class=""><strong>Fonte</strong>: "correlation" (diferente de "scheduled_query" ou "live_query").</li>
+<li class=""><strong>Severidade</strong>: a que você escolheu ao criar a regra.</li>
+<li class=""><strong>Status</strong>: começa em "open" — você triagem em <a class="" href=/CentralOps-docs/operations/detections>Detecções</a>.</li>
+<li class=""><strong>Chave de dedup</strong>: inclui a chave de agrupamento, garantindo que eventos do mesmo grupo não geram duplicatas enquanto a supressão estiver ativa.</li>
+</ul>
+<p>Você vê as Detecções em <strong>Operação → Detecções</strong>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=limites-e-roadmap>Limites e roadmap<a href=#limites-e-roadmap class=hash-link aria-label="Link direto para Limites e roadmap" title="Link direto para Limites e roadmap" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>Tipo</strong>: atualmente, apenas <strong>threshold</strong> (contagem em janela). <strong>Sequence</strong> (padrão A → B → C) e <strong>Aggregation</strong> (soma, média) estão no roadmap.</li>
+<li class=""><strong>Sem filtros complexos</strong>: os filtros <code>where</code> suportam operadores simples: <code>eq</code> (igual), <code>ne</code> (diferente), <code>contains</code> (contém), <code>gt</code>/<code>lt</code>/<code>gte</code>/<code>lte</code> (comparações numéricas). Para lógica muito avançada, use a <a class="" href=/CentralOps-docs/operations/detections>Busca federada</a> e salve como Correlation Rule depois.</li>
+<li class=""><strong>Quota por organização</strong>: existe limite de regras por organização. Se receber erro 409 (Conflict), consulte o administrador.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=passo-a-passo>Passo a passo<a href=#passo-a-passo class=hash-link aria-label="Link direto para Passo a passo" title="Link direto para Passo a passo" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=criar-uma-regra-para-detectar-brute-force>Criar uma regra para detectar brute-force<a href=#criar-uma-regra-para-detectar-brute-force class=hash-link aria-label="Link direto para Criar uma regra para detectar brute-force" title="Link direto para Criar uma regra para detectar brute-force" translate=no>​</a></h3>
+<ol>
+<li class="">
+<p>Abra <strong>Conhecimento → Correlação</strong>.</p>
+</li>
+<li class="">
+<p>Clique em <strong>+ Nova regra</strong>.</p>
+</li>
+<li class="">
+<p>Preencha:</p>
+<ul>
+<li class=""><strong>Nome</strong>: "Brute-force SSH"</li>
+<li class=""><strong>Descrição</strong>: "Múltiplas conexões SSH falhadas do mesmo IP"</li>
+<li class=""><strong>Campo de agrupamento</strong>: <code>source.ip</code></li>
+<li class=""><strong>Limite mínimo</strong>: 10</li>
+<li class=""><strong>Janela de tempo</strong>: 300 (5 minutos)</li>
+<li class=""><strong>Filtros</strong>: adicione <code>event.action eq "ssh_login_failed"</code></li>
+<li class=""><strong>Severidade</strong>: High</li>
+<li class=""><strong>Supressão</strong>: 3600</li>
+</ul>
+</li>
+<li class="">
+<p>Clique <strong>Salvar</strong>.</p>
+</li>
+</ol>
+<p>A partir daqui, sempre que 10 ou mais falhas de SSH vierem do mesmo IP em 5 minutos, uma Detecção será criada.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=revisar-e-triagem-de-uma-detecção-gerada>Revisar e triagem de uma Detecção gerada<a href=#revisar-e-triagem-de-uma-detecção-gerada class=hash-link aria-label="Link direto para Revisar e triagem de uma Detecção gerada" title="Link direto para Revisar e triagem de uma Detecção gerada" translate=no>​</a></h3>
+<ol>
+<li class="">Abra <strong>Operação → Detecções</strong>.</li>
+<li class="">Filtre por status "open".</li>
+<li class="">Clique em uma Detecção com <code>source = "correlation"</code>.</li>
+<li class="">No detalhe, veja a regra que a gerou e os eventos que acionaram.</li>
+<li class="">Mude o status para "acknowledged" (investigando) ou "closed" (resolvido/falso positivo).</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=ajustar-uma-regra-que-gera-muitos-falsos-positivos>Ajustar uma regra que gera muitos falsos positivos<a href=#ajustar-uma-regra-que-gera-muitos-falsos-positivos class=hash-link aria-label="Link direto para Ajustar uma regra que gera muitos falsos positivos" title="Link direto para Ajustar uma regra que gera muitos falsos positivos" translate=no>​</a></h3>
+<ol>
+<li class="">Abra <strong>Conhecimento → Correlação</strong>.</li>
+<li class="">Clique em editar na regra problemática.</li>
+<li class="">Aumente <code>min_count</code> (ex.: de 5 para 10).</li>
+<li class="">Ou aumente <code>window_seconds</code> para exigir uma concentração maior em menos tempo.</li>
+<li class="">Ou adicione um filtro mais específico na cláusula <code>where</code>.</li>
+<li class="">Clique <strong>Salvar</strong>.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=próximos-passos>Próximos passos<a href=#próximos-passos class=hash-link aria-label="Link direto para Próximos passos" title="Link direto para Próximos passos" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>Quer triagem as Detecções geradas?</strong> Vá em <strong>Operação → Detecções</strong> (<a class="" href=/CentralOps-docs/operations/detections>Detecções</a>).</li>
+<li class=""><strong>Precisa de análise mais profunda?</strong> Use <strong>Operação → Busca federada</strong> (<a class="" href=/CentralOps-docs/operations/detections>Busca federada</a>) para consultar múltiplas fontes com queries avançadas.</li>
+<li class=""><strong>Quer ver todos os eventos?</strong> Vá em <strong>Operação → Alertas</strong> (<a class="" href=/CentralOps-docs/operations/alerts>Alertas</a>).</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documento"><a class="pagination-nav__link pagination-nav__link--prev" href=/CentralOps-docs/operations/detections><div class=pagination-nav__sublabel>Anterior</div><div class=pagination-nav__label>Detecções</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/CentralOps-docs/operations/pipeline-health><div class=pagination-nav__sublabel>Próxima</div><div class=pagination-nav__label>Saúde do Pipeline</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#quando-usar class="table-of-contents__link toc-highlight">Quando usar</a><li><a href=#como-funciona-tipo-threshold class="table-of-contents__link toc-highlight">Como funciona: tipo threshold</a><li><a href=#permissões class="table-of-contents__link toc-highlight">Permissões</a><li><a href=#a-tela class="table-of-contents__link toc-highlight">A tela</a><ul><li><a href=#lista-de-regras class="table-of-contents__link toc-highlight">Lista de regras</a><li><a href=#criar-uma-regra class="table-of-contents__link toc-highlight">Criar uma regra</a><li><a href=#editar-uma-regra class="table-of-contents__link toc-highlight">Editar uma regra</a><li><a href=#ativar--desativar class="table-of-contents__link toc-highlight">Ativar / Desativar</a><li><a href=#excluir-uma-regra class="table-of-contents__link toc-highlight">Excluir uma regra</a></ul><li><a href=#detecções-geradas class="table-of-contents__link toc-highlight">Detecções geradas</a><li><a href=#limites-e-roadmap class="table-of-contents__link toc-highlight">Limites e roadmap</a><li><a href=#passo-a-passo class="table-of-contents__link toc-highlight">Passo a passo</a><ul><li><a href=#criar-uma-regra-para-detectar-brute-force class="table-of-contents__link toc-highlight">Criar uma regra para detectar brute-force</a><li><a href=#revisar-e-triagem-de-uma-detecção-gerada class="table-of-contents__link toc-highlight">Revisar e triagem de uma Detecção gerada</a><li><a href=#ajustar-uma-regra-que-gera-muitos-falsos-positivos class="table-of-contents__link toc-highlight">Ajustar uma regra que gera muitos falsos positivos</a></ul><li><a href=#próximos-passos class="table-of-contents__link toc-highlight">Próximos passos</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Documentação</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/getting-started/overview>Começar</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/operations/dashboard>Operação diária</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/normalization/overview>Mappings (CML)</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/runbooks/dispatcher>Runbooks</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Plataforma</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/concepts/architecture>Arquitetura</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/concepts/rbac>RBAC</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/integrations/overview>Integrações</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/compliance/retention>Compliance</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Recursos</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/getting-started/quickstart>Quickstart</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/normalization/cookbook>DSL Cookbook</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/normalization/troubleshooting>Troubleshooting</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 CentralOps. Built with Docusaurus.</div></div></div></footer></div></body>

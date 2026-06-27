@@ -1,0 +1,218 @@
+<!doctype html><html lang=pt-BR dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-current docs-doc-page docs-doc-id-operations/pipeline-health" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.0"><title data-rh=true>Saúde do Pipeline | CentralOps</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://dathannobrega.github.io/CentralOps-docs/img/centralops-social-card.jpg /><meta data-rh=true name=twitter:image content=https://dathannobrega.github.io/CentralOps-docs/img/centralops-social-card.jpg /><meta data-rh=true property=og:url content=https://dathannobrega.github.io/CentralOps-docs/operations/pipeline-health /><meta data-rh=true property=og:locale content=pt_BR /><meta data-rh=true name=docusaurus_locale content=pt-BR /><meta data-rh=true name=docsearch:language content=pt-BR /><meta data-rh=true name=docusaurus_version content=current /><meta data-rh=true name=docusaurus_tag content=docs-default-current /><meta data-rh=true name=docsearch:version content=current /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-current /><meta data-rh=true property=og:title content="Saúde do Pipeline | CentralOps"/><meta data-rh=true name=description content="Acompanhe em tempo real a saúde da coleta de eventos e da entrega aos destinos"/><meta data-rh=true property=og:description content="Acompanhe em tempo real a saúde da coleta de eventos e da entrega aos destinos"/><link data-rh=true rel=icon href=/CentralOps-docs/img/favicon.ico /><link data-rh=true rel=canonical href=https://dathannobrega.github.io/CentralOps-docs/operations/pipeline-health /><link data-rh=true rel=alternate href=https://dathannobrega.github.io/CentralOps-docs/operations/pipeline-health hreflang=pt-BR /><link data-rh=true rel=alternate href=https://dathannobrega.github.io/CentralOps-docs/operations/pipeline-health hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://dathannobrega.github.io/CentralOps-docs/operations/pipeline-health","name":"Saúde do Pipeline","position":1}]}</script><link rel=stylesheet href=/CentralOps-docs/assets/css/styles.2795a4b5.css /><script src=/CentralOps-docs/assets/js/runtime~main.e97a0e67.js defer></script><script src=/CentralOps-docs/assets/js/main.415937d4.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-ddd")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/CentralOps-docs/img/logo.svg /><div role=region aria-label="Pular para o conteúdo principal"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Pular para o conteúdo principal</a></div><nav aria-label="Navegação principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar painel de navegação" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/CentralOps-docs/><div class=navbar__logo><img src=/CentralOps-docs/img/logo.svg alt=CentralOps class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/CentralOps-docs/img/logo.svg alt=CentralOps class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">CentralOps</b></a><a class="navbar__item navbar__link" href=/CentralOps-docs/>Começar</a><a class="navbar__item navbar__link" href=/CentralOps-docs/outputs/overview>Saídas & Rotas</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/CentralOps-docs/operations/dashboard>Operação</a><a class="navbar__item navbar__link" href=/CentralOps-docs/administration/users-and-roles>Administração</a><a class="navbar__item navbar__link" href=/CentralOps-docs/normalization/overview>Mappings</a><a class="navbar__item navbar__link" href=/CentralOps-docs/runbooks/dispatcher>Runbooks</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/CentralOps-docs/operations/pipeline-health>2.0</a><ul class=dropdown__menu><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/CentralOps-docs/operations/pipeline-health>2.0</a><li><a class=dropdown__link href=/CentralOps-docs/1.7/operations/pipeline-health>1.7 (legada)</a></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="modo do sistema" aria-label="Mudar entre modo claro e escuro (modo do sistema está ativo)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class=navbar__search><span aria-label="expand searchbar" role=button class=search-icon tabindex=0></span><input id=search_input_react type=search placeholder=Loading... aria-label=Search class="navbar__search-input search-bar" disabled/></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=docsWrapper_hBAB><button aria-label="Voltar para o topo" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class=sidebarViewport_aRkj><div class=sidebar_njMd><nav aria-label="Painel lateral de documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/CentralOps-docs/operations/dashboard><span title="Operação diária" class=categoryLinkLabel_W154>Operação diária</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/dashboard><span title=Dashboard class=linkLabel_WmDU>Dashboard</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/alerts><span title=Alertas class=linkLabel_WmDU>Alertas</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/quarantine><span title=Quarentena class=linkLabel_WmDU>Quarentena</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/search><span title=Investigações class=linkLabel_WmDU>Investigações</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/federated-search><span title="Busca federada" class=linkLabel_WmDU>Busca federada</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/detections><span title=Detecções class=linkLabel_WmDU>Detecções</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/correlation-rules><span title="Regras de correlação" class=linkLabel_WmDU>Regras de correlação</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/CentralOps-docs/operations/pipeline-health><span title="Saúde do Pipeline" class=linkLabel_WmDU>Saúde do Pipeline</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/operations/history-audit><span title="Histórico e auditoria" class=linkLabel_WmDU>Histórico e auditoria</span></a></ul></ul></nav></div></div></aside><main class=docMainContainer_TBSr><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label=Trilha><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Página Inicial" class=breadcrumbs__link href=/CentralOps-docs/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_YNFT><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Operação diária</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>Saúde do Pipeline</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Versão: 2.0</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">Nesta página</button></div><div class="theme-doc-markdown markdown"><header><h1>Saúde do Pipeline</h1></header>
+<p>A tela <strong>Saúde do Pipeline</strong> mostra, em um único painel, se os eventos estão sendo <strong>coletados</strong> das suas integrações e <strong>entregues</strong> aos destinos configurados — para você detectar problemas antes que virem perda de dados.</p>
+<p>Você a encontra no menu <strong>Normalização → Saúde do Pipeline</strong>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=quando-usar>Quando usar<a href=#quando-usar class=hash-link aria-label="Link direto para Quando usar" title="Link direto para Quando usar" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>Ronda matinal do SOC</strong>: abrir a tela no início do turno para confirmar que toda coleta e toda entrega estão saudáveis antes de começar o dia.</li>
+<li class=""><strong>"Parei de ver eventos de um fabricante"</strong>: um analista nota que alertas de um produto sumiram e precisa saber se o problema está na coleta (integração parada) ou na entrega (destino fora do ar).</li>
+<li class=""><strong>Risco de perda de dados</strong>: a fila de reenvio de um destino está crescendo e a equipe precisa decidir se age agora ou escala para o administrador.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=visão-geral>Visão geral<a href=#visão-geral class=hash-link aria-label="Link direto para Visão geral" title="Link direto para Visão geral" translate=no>​</a></h2>
+<p>O painel tem <strong>duas seções</strong>:</p>
+<ol>
+<li class=""><strong>Saúde por integração</strong> — um card por integração com eventos por minuto, atraso, campos novos detectados, eventos em quarentena e status.</li>
+<li class=""><strong>Saúde por destino</strong> — uma lista com o estado e as métricas de cada saída configurada.</li>
+</ol>
+<p>As duas seções refletem a coleta do último minuto e o histórico das últimas 24 horas.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=saúde-por-integração>Saúde por integração<a href=#saúde-por-integração class=hash-link aria-label="Link direto para Saúde por integração" title="Link direto para Saúde por integração" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=o-que-cada-card-mostra>O que cada card mostra<a href=#o-que-cada-card-mostra class=hash-link aria-label="Link direto para O que cada card mostra" title="Link direto para O que cada card mostra" translate=no>​</a></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Campo<th>Descrição<tbody><tr><td><strong>Nome</strong><td>Nome da integração (ex.: "Sophos - Acme").<tr><td><strong>Status</strong><td>Saudável, degradada, com problema, ou sem dados.<tr><td><strong>Eventos/min</strong><td>Taxa média de eventos coletados nos últimos 5 minutos (vazio = ainda não houve coleta).<tr><td><strong>Atraso</strong><td>Tempo desde o último evento coletado (vazio = nunca coletou).<tr><td><strong>Campos novos (24h)</strong><td>Eventos com campos obrigatórios faltando — sinal de mapeamento incompleto ou fabricante enviando dados fora do esperado.<tr><td><strong>Quarentena (24h)</strong><td>Eventos retidos por falha de mapeamento, validação ou ocultação de dados sensíveis.</table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=como-ler-o-status>Como ler o status<a href=#como-ler-o-status class=hash-link aria-label="Link direto para Como ler o status" title="Link direto para Como ler o status" translate=no>​</a></h3>
+<ul>
+<li class=""><strong>Saudável (verde)</strong>: coleta rodando, atraso menor que 5 minutos, sem quarentena nem campos novos.</li>
+<li class=""><strong>Degradada (amarelo)</strong>: atraso de 5 a 15 minutos, ou há campos novos/quarentena, ou taxa de erro baixa.</li>
+<li class=""><strong>Com problema (vermelho)</strong>: atraso maior que 15 minutos, parada há mais de 10 minutos, ou taxa de erro alta.</li>
+<li class=""><strong>Sem dados (cinza)</strong>: integração criada mas que nunca coletou — não há métrica.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=filtrar-integrações>Filtrar integrações<a href=#filtrar-integrações class=hash-link aria-label="Link direto para Filtrar integrações" title="Link direto para Filtrar integrações" translate=no>​</a></h3>
+<p>Use os botões acima dos cards:</p>
+<ul>
+<li class=""><strong>Todos</strong> — mostra todas (padrão).</li>
+<li class=""><strong>Saudáveis</strong> — apenas as verdes.</li>
+<li class=""><strong>Com problema</strong> — degradadas, com problema ou sem dados.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=investigar-uma-integração-com-problema>Investigar uma integração com problema<a href=#investigar-uma-integração-com-problema class=hash-link aria-label="Link direto para Investigar uma integração com problema" title="Link direto para Investigar uma integração com problema" translate=no>​</a></h3>
+<ol>
+<li class="">Clique no card da integração para abrir o painel de detalhes.</li>
+<li class="">No painel você vê:
+<ul>
+<li class="">O último erro registrado (ex.: "401 Unauthorized", "429 Too Many Requests").</li>
+<li class="">O gráfico de coleta das últimas 24 horas.</li>
+<li class="">O histórico de campos novos e quarentena.</li>
+<li class="">As ações de <strong>pausar</strong> ou <strong>retomar</strong> a coleta.</li>
+<li class="">A ação de <strong>testar a conexão</strong> novamente.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Exemplo: integração parada</strong></p>
+<ol>
+<li class="">O card está vermelho e o atraso passou de 15 minutos.</li>
+<li class="">Abra os detalhes e leia o último erro.</li>
+<li class="">Se for <strong>"401 Unauthorized"</strong>, as credenciais expiraram. Vá ao menu <strong>Visão geral → Integrações</strong> (<a class="" href=/CentralOps-docs/integrations/overview>Integrações</a>), abra a integração e atualize as credenciais.</li>
+<li class="">Se for <strong>"429 Too Many Requests"</strong>, o fabricante limitou a taxa de chamadas. A frequência de coleta é definida na configuração da integração — reduza-a se o erro persistir.</li>
+<li class="">Use <strong>testar a conexão</strong>. Se passar, foi um erro passageiro: clique em <strong>retomar</strong>.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=saúde-por-destino>Saúde por destino<a href=#saúde-por-destino class=hash-link aria-label="Link direto para Saúde por destino" title="Link direto para Saúde por destino" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=o-que-é-um-destino>O que é um destino<a href=#o-que-é-um-destino class=hash-link aria-label="Link direto para O que é um destino" title="Link direto para O que é um destino" translate=no>​</a></h3>
+<p>Um destino é uma saída configurada para receber os eventos roteados: Wazuh, Splunk, Elastic, Syslog, S3, entre outros.</p>
+<p>Cada destino é <strong>independente</strong> — a falha de um não afeta os outros. Enquanto um destino está fora do ar, os eventos ficam guardados na <strong>fila de reenvio</strong> e são entregues assim que ele volta, sem perda.</p>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=o-que-a-lista-de-destinos-mostra>O que a lista de destinos mostra<a href=#o-que-a-lista-de-destinos-mostra class=hash-link aria-label="Link direto para O que a lista de destinos mostra" title="Link direto para O que a lista de destinos mostra" translate=no>​</a></h3>
+<p>Abra a seção <strong>Saúde por destino</strong> para ver cada saída:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Campo<th>Descrição<tbody><tr><td><strong>Nome</strong><td>Nome do destino (ex.: "Wazuh padrão", "Splunk Prod").<tr><td><strong>Status</strong><td>Saudável, degradado, com problema, ou desativado.<tr><td><strong>Eventos/s</strong><td>Eventos enviados por segundo na última hora.<tr><td><strong>Volume</strong><td>Throughput em bytes por minuto na última hora.<tr><td><strong>Fila de reenvio</strong><td>Quantidade de eventos aguardando reentrega após falha.<tr><td><strong>Proteção do destino</strong><td>Indica se a proteção automática contra destino instável está ativa.</table>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=como-ler-o-status-1>Como ler o status<a href=#como-ler-o-status-1 class=hash-link aria-label="Link direto para Como ler o status" title="Link direto para Como ler o status" translate=no>​</a></h3>
+<ul>
+<li class=""><strong>Saudável (verde)</strong>: destino conectado, taxa de envio normal, sem falhas recentes.</li>
+<li class=""><strong>Degradado (amarelo)</strong>: latência alta, fila de reenvio crescendo, ou desconexões esporádicas.</li>
+<li class=""><strong>Com problema (vermelho)</strong>: destino fora do ar, falhas persistentes, ou muitos eventos na fila de reenvio.</li>
+<li class=""><strong>Desativado (cinza)</strong>: destino desabilitado — não recebe eventos.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=proteção-contra-destino-instável-e-fila-de-reenvio>Proteção contra destino instável e fila de reenvio<a href=#proteção-contra-destino-instável-e-fila-de-reenvio class=hash-link aria-label="Link direto para Proteção contra destino instável e fila de reenvio" title="Link direto para Proteção contra destino instável e fila de reenvio" translate=no>​</a></h3>
+<p>Quando um destino começa a falhar repetidamente, o CentralOps ativa automaticamente uma <strong>proteção contra destino instável</strong>: em vez de insistir em um destino que está fora do ar, os novos eventos são desviados para a <strong>fila de reenvio</strong>.</p>
+<ul>
+<li class="">Enquanto a proteção está ativa, os eventos seguem para a fila de reenvio em segurança, sem se perderem.</li>
+<li class="">O CentralOps testa o destino periodicamente por conta própria. Quando ele volta a responder, a proteção é desligada e os eventos da fila de reenvio são entregues automaticamente.</li>
+<li class="">Você não precisa ligar ou desligar essa proteção — ela é automática. Sua função é corrigir a causa raiz (credencial, certificado, rede) para que o destino volte.</li>
+</ul>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=investigar-um-destino-com-problema>Investigar um destino com problema<a href=#investigar-um-destino-com-problema class=hash-link aria-label="Link direto para Investigar um destino com problema" title="Link direto para Investigar um destino com problema" translate=no>​</a></h3>
+<ol>
+<li class="">Clique no card do destino para abrir os detalhes.</li>
+<li class="">No painel você vê:
+<ul>
+<li class="">As últimas falhas, com mensagem de erro e horário.</li>
+<li class="">A taxa de reentrega.</li>
+<li class="">O histórico de envio das últimas 24 horas.</li>
+<li class="">A ação de <strong>reprocessar a fila de reenvio</strong>.</li>
+<li class="">As ações de <strong>desabilitar</strong> ou <strong>habilitar</strong> o destino.</li>
+</ul>
+</li>
+</ol>
+<p><strong>Exemplo: destino fora do ar</strong></p>
+<ol>
+<li class="">O destino está vermelho e marcado como desconectado.</li>
+<li class="">Abra os detalhes e leia o erro (ex.: "Connection refused", "TLS certificate expired").</li>
+<li class="">Se for um destino tipo Splunk, confirme com o responsável o token e o endereço do destino.</li>
+<li class="">Se for um problema de rede, certificado ou firewall entre o CentralOps e o destino, fale com o administrador da plataforma ou com a equipe de rede — esses ajustes ficam fora da interface do CentralOps.</li>
+<li class="">Depois de corrigido, a proteção é desligada automaticamente em poucos segundos. Use <strong>reprocessar a fila de reenvio</strong> para entregar os eventos que ficaram acumulados.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=casos-de-uso-passo-a-passo>Casos de uso passo a passo<a href=#casos-de-uso-passo-a-passo class=hash-link aria-label="Link direto para Casos de uso passo a passo" title="Link direto para Casos de uso passo a passo" translate=no>​</a></h2>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=ronda-matinal>Ronda matinal<a href=#ronda-matinal class=hash-link aria-label="Link direto para Ronda matinal" title="Link direto para Ronda matinal" translate=no>​</a></h3>
+<ol>
+<li class="">Abra <strong>Normalização → Saúde do Pipeline</strong>.</li>
+<li class="">Todas as integrações em verde? A coleta está em dia.</li>
+<li class="">Todos os destinos em verde? Não há risco de perda de eventos.</li>
+<li class="">Qualquer amarelo ou vermelho: clique no card para investigar.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=não-vejo-eventos-no-wazuh>"Não vejo eventos no Wazuh"<a href=#não-vejo-eventos-no-wazuh class=hash-link aria-label='Link direto para "Não vejo eventos no Wazuh"' title='Link direto para "Não vejo eventos no Wazuh"' translate=no>​</a></h3>
+<ol>
+<li class="">Confira se a integração de origem está em verde (coletando).</li>
+<li class=""><strong>Se está coletando, mas o Wazuh não recebe:</strong>
+<ul>
+<li class="">Verifique se o destino Wazuh está em verde.</li>
+<li class="">Se estiver vermelho, provavelmente a proteção está ativa, a fila de reenvio está cheia, ou há problema de certificado.</li>
+<li class="">Corrija a causa e use <strong>reprocessar a fila de reenvio</strong>.</li>
+</ul>
+</li>
+<li class=""><strong>Se a integração está em vermelho (não coleta):</strong>
+<ul>
+<li class="">Veja o último erro (401? 429? tempo esgotado?).</li>
+<li class="">Teste a conexão. Se falhar por credencial, atualize-a em <strong>Visão geral → Integrações</strong>.</li>
+</ul>
+</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=eventos-em-quarentena>"Eventos em quarentena"<a href=#eventos-em-quarentena class=hash-link aria-label='Link direto para "Eventos em quarentena"' title='Link direto para "Eventos em quarentena"' translate=no>​</a></h3>
+<ol>
+<li class="">O card de integração mostra "Quarentena (24h)" maior que zero.</li>
+<li class="">Abra os detalhes para ver os eventos recentes.</li>
+<li class="">Causa comum: um campo obrigatório do padrão de normalização ficou faltando, ou o fabricante enviou um valor inválido.</li>
+<li class="">Vá ao menu <strong>Normalização → Quarentena</strong> para revisar, reprocessar ou descartar esses eventos. Veja <a class="" href=/CentralOps-docs/operations/quarantine>Quarentena</a>.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=a-fila-de-reenvio-de-um-destino-está-crescendo>"A fila de reenvio de um destino está crescendo"<a href=#a-fila-de-reenvio-de-um-destino-está-crescendo class=hash-link aria-label='Link direto para "A fila de reenvio de um destino está crescendo"' title='Link direto para "A fila de reenvio de um destino está crescendo"' translate=no>​</a></h3>
+<ol>
+<li class="">O destino está amarelo ou vermelho e a fila de reenvio passou de 100 eventos.</li>
+<li class="">Abra os detalhes para ver as últimas falhas.</li>
+<li class="">Se a proteção contra destino instável estiver ativa: corrija a causa no destino (token expirado? endereço errado?) e aguarde a proteção se desligar sozinha.</li>
+<li class="">Se a proteção não estiver ativa, mas a fila continua crescendo, o destino pode estar lento ou limitando a taxa de recebimento. Esse tipo de ajuste de tempo de espera e limite de envio é definido pela equipe de infraestrutura no momento do deploy. Se precisar alterá-lo, fale com o administrador da plataforma.</li>
+<li class="">Use <strong>reprocessar a fila de reenvio</strong> quando o destino estiver saudável de novo.</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=limitações>Limitações<a href=#limitações class=hash-link aria-label="Link direto para Limitações" title="Link direto para Limitações" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>Atualização</strong>: as métricas atualizam a cada 1 a 2 minutos — não é tempo real.</li>
+<li class=""><strong>Histórico</strong>: o card mostra apenas as últimas 24 horas. Para tendências de longo prazo, exporte os eventos para um destino de análise.</li>
+<li class=""><strong>Acesso</strong>: operadores veem todas as métricas. Administradores também veem os erros detalhados e as ações de correção.</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=próximos-passos>Próximos passos<a href=#próximos-passos class=hash-link aria-label="Link direto para Próximos passos" title="Link direto para Próximos passos" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>Integração com problema?</strong> Vá a <strong>Visão geral → Integrações</strong> (<a class="" href=/CentralOps-docs/integrations/overview>Integrações</a>).</li>
+<li class=""><strong>Evento em quarentena?</strong> Vá a <strong>Normalização → Quarentena</strong> (<a class="" href=/CentralOps-docs/operations/quarantine>Quarentena</a>).</li>
+<li class=""><strong>Quer rotear eventos seletivamente?</strong> Vá a <strong>Operação → Roteamento</strong> (<a class="" href=/CentralOps-docs/outputs/routing>Roteamento</a>).</li>
+<li class=""><strong>Quer configurar novos destinos?</strong> Vá a <strong>Operação → Destinos</strong> (<a class="" href=/CentralOps-docs/outputs/destinations>Destinos</a>).</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documento"><a class="pagination-nav__link pagination-nav__link--prev" href=/CentralOps-docs/operations/correlation-rules><div class=pagination-nav__sublabel>Anterior</div><div class=pagination-nav__label>Regras de correlação</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/CentralOps-docs/operations/history-audit><div class=pagination-nav__sublabel>Próxima</div><div class=pagination-nav__label>Histórico e auditoria</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#quando-usar class="table-of-contents__link toc-highlight">Quando usar</a><li><a href=#visão-geral class="table-of-contents__link toc-highlight">Visão geral</a><li><a href=#saúde-por-integração class="table-of-contents__link toc-highlight">Saúde por integração</a><ul><li><a href=#o-que-cada-card-mostra class="table-of-contents__link toc-highlight">O que cada card mostra</a><li><a href=#como-ler-o-status class="table-of-contents__link toc-highlight">Como ler o status</a><li><a href=#filtrar-integrações class="table-of-contents__link toc-highlight">Filtrar integrações</a><li><a href=#investigar-uma-integração-com-problema class="table-of-contents__link toc-highlight">Investigar uma integração com problema</a></ul><li><a href=#saúde-por-destino class="table-of-contents__link toc-highlight">Saúde por destino</a><ul><li><a href=#o-que-é-um-destino class="table-of-contents__link toc-highlight">O que é um destino</a><li><a href=#o-que-a-lista-de-destinos-mostra class="table-of-contents__link toc-highlight">O que a lista de destinos mostra</a><li><a href=#como-ler-o-status-1 class="table-of-contents__link toc-highlight">Como ler o status</a><li><a href=#proteção-contra-destino-instável-e-fila-de-reenvio class="table-of-contents__link toc-highlight">Proteção contra destino instável e fila de reenvio</a><li><a href=#investigar-um-destino-com-problema class="table-of-contents__link toc-highlight">Investigar um destino com problema</a></ul><li><a href=#casos-de-uso-passo-a-passo class="table-of-contents__link toc-highlight">Casos de uso passo a passo</a><ul><li><a href=#ronda-matinal class="table-of-contents__link toc-highlight">Ronda matinal</a><li><a href=#não-vejo-eventos-no-wazuh class="table-of-contents__link toc-highlight">"Não vejo eventos no Wazuh"</a><li><a href=#eventos-em-quarentena class="table-of-contents__link toc-highlight">"Eventos em quarentena"</a><li><a href=#a-fila-de-reenvio-de-um-destino-está-crescendo class="table-of-contents__link toc-highlight">"A fila de reenvio de um destino está crescendo"</a></ul><li><a href=#limitações class="table-of-contents__link toc-highlight">Limitações</a><li><a href=#próximos-passos class="table-of-contents__link toc-highlight">Próximos passos</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Documentação</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/getting-started/overview>Começar</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/operations/dashboard>Operação diária</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/normalization/overview>Mappings (CML)</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/runbooks/dispatcher>Runbooks</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Plataforma</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/concepts/architecture>Arquitetura</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/concepts/rbac>RBAC</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/integrations/overview>Integrações</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/compliance/retention>Compliance</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Recursos</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/getting-started/quickstart>Quickstart</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/normalization/cookbook>DSL Cookbook</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/normalization/troubleshooting>Troubleshooting</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 CentralOps. Built with Docusaurus.</div></div></div></footer></div></body>

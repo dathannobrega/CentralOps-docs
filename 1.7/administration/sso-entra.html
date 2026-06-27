@@ -1,0 +1,262 @@
+<!doctype html><html lang=pt-BR dir=ltr class="docs-wrapper plugin-docs plugin-id-default docs-version-1.7 docs-doc-page docs-doc-id-administration/sso-entra" data-has-hydrated=false><head><meta charset=UTF-8><meta name=generator content="Docusaurus v3.10.0"><title data-rh=true>SSO (Microsoft Entra) | CentralOps</title><meta data-rh=true name=viewport content="width=device-width, initial-scale=1.0"/><meta data-rh=true name=twitter:card content=summary_large_image /><meta data-rh=true property=og:image content=https://dathannobrega.github.io/CentralOps-docs/img/centralops-social-card.jpg /><meta data-rh=true name=twitter:image content=https://dathannobrega.github.io/CentralOps-docs/img/centralops-social-card.jpg /><meta data-rh=true property=og:url content=https://dathannobrega.github.io/CentralOps-docs/1.7/administration/sso-entra /><meta data-rh=true property=og:locale content=pt_BR /><meta data-rh=true name=docusaurus_locale content=pt-BR /><meta data-rh=true name=docsearch:language content=pt-BR /><meta data-rh=true name=docusaurus_version content=1.7 /><meta data-rh=true name=docusaurus_tag content=docs-default-1.7 /><meta data-rh=true name=docsearch:version content=1.7 /><meta data-rh=true name=docsearch:docusaurus_tag content=docs-default-1.7 /><meta data-rh=true property=og:title content="SSO (Microsoft Entra) | CentralOps"/><meta data-rh=true name=description content="Login federado via Entra ID — OIDC, App Roles e provisionamento"/><meta data-rh=true property=og:description content="Login federado via Entra ID — OIDC, App Roles e provisionamento"/><link data-rh=true rel=icon href=/CentralOps-docs/img/favicon.ico /><link data-rh=true rel=canonical href=https://dathannobrega.github.io/CentralOps-docs/1.7/administration/sso-entra /><link data-rh=true rel=alternate href=https://dathannobrega.github.io/CentralOps-docs/1.7/administration/sso-entra hreflang=pt-BR /><link data-rh=true rel=alternate href=https://dathannobrega.github.io/CentralOps-docs/1.7/administration/sso-entra hreflang=x-default /><script data-rh=true type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","item":"https://dathannobrega.github.io/CentralOps-docs/1.7/administration/sso-entra","name":"SSO (Microsoft Entra)","position":1}]}</script><link rel=stylesheet href=/CentralOps-docs/assets/css/styles.2795a4b5.css /><script src=/CentralOps-docs/assets/js/runtime~main.e97a0e67.js defer></script><script src=/CentralOps-docs/assets/js/main.415937d4.js defer></script></head><body><svg style="display: none;"><defs>
+<symbol id=theme-svg-external-link viewBox="0 0 24 24"><path fill=currentColor d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme-ddd")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")),document.documentElement.setAttribute("data-theme-choice",t||"system")}(),function(){try{for(var[t,e]of new URLSearchParams(window.location.search).entries())if(t.startsWith("docusaurus-data-")){var a=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(a,e)}}catch(t){}}()</script><div id=__docusaurus><link rel=preload as=image href=/CentralOps-docs/img/logo.svg /><div role=region aria-label="Pular para o conteúdo principal"><a class=skipToContent_fXgn href=#__docusaurus_skipToContent_fallback>Pular para o conteúdo principal</a></div><nav aria-label="Navegação principal" class="theme-layout-navbar navbar navbar--fixed-top"><div class=navbar__inner><div class="theme-layout-navbar-left navbar__items"><button aria-label="Alternar painel de navegação" aria-expanded=false class="navbar__toggle clean-btn" type=button><svg width=30 height=30 viewBox="0 0 30 30" aria-hidden=true><path stroke=currentColor stroke-linecap=round stroke-miterlimit=10 stroke-width=2 d="M4 7h22M4 15h22M4 23h22"/></svg></button><a class=navbar__brand href=/CentralOps-docs/><div class=navbar__logo><img src=/CentralOps-docs/img/logo.svg alt=CentralOps class="themedComponent_mlkZ themedComponent--light_NVdE"/><img src=/CentralOps-docs/img/logo.svg alt=CentralOps class="themedComponent_mlkZ themedComponent--dark_xIcU"/></div><b class="navbar__title text--truncate">CentralOps</b></a><a class="navbar__item navbar__link" href=/CentralOps-docs/1.7>Começar</a><a class="navbar__item navbar__link" href=/CentralOps-docs/outputs/overview>Saídas & Rotas</a><a class="navbar__item navbar__link" href=/CentralOps-docs/1.7/operations/dashboard>Operação</a><a aria-current=page class="navbar__item navbar__link navbar__link--active" href=/CentralOps-docs/1.7/administration/users-and-roles>Administração</a><a class="navbar__item navbar__link" href=/CentralOps-docs/1.7/normalization/overview>Mappings</a><a class="navbar__item navbar__link" href=/CentralOps-docs/1.7/runbooks/dispatcher>Runbooks</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a aria-current=page class="navbar__link active" aria-haspopup=true aria-expanded=false role=button href=/CentralOps-docs/1.7/administration/sso-entra>1.7 (legada)</a><ul class=dropdown__menu><li><a class=dropdown__link href=/CentralOps-docs/administration/sso-entra>2.0</a><li><a aria-current=page class="dropdown__link dropdown__link--active" href=/CentralOps-docs/1.7/administration/sso-entra>1.7 (legada)</a></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type=button disabled title="modo do sistema" aria-label="Mudar entre modo claro e escuro (modo do sistema está ativo)"><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill=currentColor d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill=currentColor d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"/></svg><svg viewBox="0 0 24 24" width=24 height=24 aria-hidden=true class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill=currentColor d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"/></svg></button></div><div class=navbarSearchContainer_Bca1><div class=navbar__search><span aria-label="expand searchbar" role=button class=search-icon tabindex=0></span><input id=search_input_react type=search placeholder=Loading... aria-label=Search class="navbar__search-input search-bar" disabled/></div></div></div></div><div role=presentation class=navbar-sidebar__backdrop></div></nav><div id=__docusaurus_skipToContent_fallback class="theme-layout-main main-wrapper mainWrapper_z2l0"><div class=docsWrapper_hBAB><button aria-label="Voltar para o topo" class="clean-btn theme-back-to-top-button backToTopButton_sjWU" type=button></button><div class=docRoot_UBD9><aside class="theme-doc-sidebar-container docSidebarContainer_YfHR"><div class=sidebarViewport_aRkj><div class=sidebar_njMd><nav aria-label="Painel lateral de documentos" class="menu thin-scrollbar menu_SIkG"><ul class="theme-doc-sidebar-menu menu__list"><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret menu__link--active" role=button aria-expanded=true href=/CentralOps-docs/1.7/administration/users-and-roles><span title=Administração class=categoryLinkLabel_W154>Administração</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/1.7/administration/users-and-roles><span title="Usuários e papéis" class=linkLabel_WmDU>Usuários e papéis</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class="menu__link menu__link--active" aria-current=page tabindex=0 href=/CentralOps-docs/1.7/administration/sso-entra><span title="SSO (Microsoft Entra)" class=linkLabel_WmDU>SSO (Microsoft Entra)</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/1.7/administration/organizations><span title=Organizações class=linkLabel_WmDU>Organizações</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/1.7/administration/platform-config><span title="Configuração da plataforma" class=linkLabel_WmDU>Configuração da plataforma</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/1.7/administration/secrets-and-master-key><span title="Secrets e master key" class=linkLabel_WmDU>Secrets e master key</span></a></ul><li class="theme-doc-sidebar-item-category theme-doc-sidebar-item-category-level-1 menu__list-item"><div class=menu__list-item-collapsible><a class="categoryLink_byQd menu__link menu__link--sublist menu__link--sublist-caret" role=button aria-expanded=true href=/CentralOps-docs/1.7/integrations/overview><span title=Integrações class=categoryLinkLabel_W154>Integrações</span></a></div><ul class=menu__list><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/1.7/integrations/overview><span title="Visão geral de integrações" class=linkLabel_WmDU>Visão geral de integrações</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/1.7/integrations/sophos><span title="Sophos Central" class=linkLabel_WmDU>Sophos Central</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/1.7/integrations/wazuh><span title=Wazuh class=linkLabel_WmDU>Wazuh</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/1.7/integrations/dfir-iris><span title=DFIR-IRIS class=linkLabel_WmDU>DFIR-IRIS</span></a><li class="theme-doc-sidebar-item-link theme-doc-sidebar-item-link-level-2 menu__list-item"><a class=menu__link tabindex=0 href=/CentralOps-docs/1.7/integrations/adding-new-vendor><span title="Adicionar novo vendor" class=linkLabel_WmDU>Adicionar novo vendor</span></a></ul></ul></nav></div></div></aside><main class=docMainContainer_TBSr><div class="container padding-top--md padding-bottom--lg"><div class=row><div class="col docItemCol_VOVn"><div class=docItemContainer_Djhp><article><nav class="theme-doc-breadcrumbs breadcrumbsContainer_Z_bl" aria-label=Trilha><ul class=breadcrumbs><li class=breadcrumbs__item><a aria-label="Página Inicial" class=breadcrumbs__link href=/CentralOps-docs/><svg viewBox="0 0 24 24" class=breadcrumbHomeIcon_YNFT><path d="M10 19v-5h4v5c0 .55.45 1 1 1h3c.55 0 1-.45 1-1v-7h1.7c.46 0 .68-.57.33-.87L12.67 3.6c-.38-.34-.96-.34-1.34 0l-8.36 7.53c-.34.3-.13.87.33.87H5v7c0 .55.45 1 1 1h3c.55 0 1-.45 1-1z" fill=currentColor /></svg></a><li class=breadcrumbs__item><span class=breadcrumbs__link>Administração</span><li class="breadcrumbs__item breadcrumbs__item--active"><span class=breadcrumbs__link>SSO (Microsoft Entra)</span></ul></nav><span class="theme-doc-version-badge badge badge--secondary">Versão: 1.7 (legada)</span><div class="tocCollapsible_ETCw theme-doc-toc-mobile tocMobile_ITEo"><button type=button class="clean-btn tocCollapsibleButton_TO0P">Nesta página</button></div><div class="theme-doc-markdown markdown"><header><h1>SSO com Microsoft Entra ID</h1></header>
+<p>Login federado <strong>"Entrar com Microsoft"</strong> via OIDC (Authorization Code + PKCE).
+O fluxo é <em>backend-driven</em> (confidential client): o <code>client_secret</code> nunca sai
+do servidor e a sessão criada é a mesma sessão (cookie httpOnly) do login local.</p>
+<p><strong>Público</strong>: Admin (configura). Cenário: <strong>equipe interna de SOC, um único
+tenant Entra</strong>.</p>
+<p>:::info Pré-requisitos</p>
+<ul>
+<li class="">App não precisa estar exposto à internet — o navegador do analista (na VPN)
+é quem fala com a Microsoft; o backend só faz chamadas <strong>de saída</strong>.</li>
+<li class="">O backend precisa de <strong>saída</strong> para <code>login.microsoftonline.com</code> (o mesmo
+caminho que a coleta do Defender já usa).</li>
+<li class="">Acesso de <strong>admin no Entra</strong> para criar o App Registration.
+:::</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=passo-1--app-registration-no-entra>Passo 1 — App Registration no Entra<a href=#passo-1--app-registration-no-entra class=hash-link aria-label="Link direto para Passo 1 — App Registration no Entra" title="Link direto para Passo 1 — App Registration no Entra" translate=no>​</a></h2>
+<ol>
+<li class=""><strong>Entra admin center</strong> → <strong>App registrations</strong> → <strong>New registration</strong>.</li>
+<li class="">Nome: <code>CentralOps</code>. <strong>Supported account types</strong>: <em>Accounts in this
+organizational directory only</em> (single-tenant).</li>
+<li class=""><strong>Redirect URI</strong> → plataforma <strong>Web</strong> →
+<code>https://centralops.seudominio.com/api/auth/sso/callback</code>
+(exatamente igual ao <code>ENTRA_REDIRECT_URI</code>; precisa ser <strong>HTTPS</strong>).</li>
+<li class=""><strong>Register</strong>. Anote <strong>Application (client) ID</strong> e <strong>Directory (tenant) ID</strong>.</li>
+<li class=""><strong>Certificates & secrets</strong> → <strong>New client secret</strong> → copie o <strong>valor</strong>
+(mostrado uma única vez).</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=passo-2--app-roles-papéis>Passo 2 — App Roles (papéis)<a href=#passo-2--app-roles-papéis class=hash-link aria-label="Link direto para Passo 2 — App Roles (papéis)" title="Link direto para Passo 2 — App Roles (papéis)" translate=no>​</a></h2>
+<p>Em vez de Security Groups (que chegam como GUIDs e estouram o limite de
+claims), use <strong>App Roles</strong> — mais limpos e legíveis no token.</p>
+<ol>
+<li class="">
+<p>App Registration → <strong>App roles</strong> → <strong>Create app role</strong>, um para cada papel
+que pretende usar. O <strong>Value</strong> é o que aparece no claim <code>roles</code> e o que você
+mapeia em <code>ENTRA_ROLE_MAP</code>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Display name<th>Value<th>Allowed member types<tbody><tr><td>CentralOps Admin<td><code>CentralOpsAdmin</code><td>Users/Groups<tr><td>CentralOps Engineer<td><code>CentralOpsEngineer</code><td>Users/Groups<tr><td>CentralOps Operator<td><code>CentralOpsOperator</code><td>Users/Groups<tr><td>CentralOps Viewer<td><code>CentralOpsViewer</code><td>Users/Groups</table>
+</li>
+<li class="">
+<p><strong>Enterprise applications</strong> → CentralOps → <strong>Users and groups</strong> →
+<strong>Add user/group</strong>: atribua cada analista (ou um grupo) ao App Role
+adequado. Quem não recebe App Role entra com <code>ENTRA_DEFAULT_ROLE</code>.</p>
+</li>
+</ol>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=passo-3--configurar-o-centralops>Passo 3 — Configurar o CentralOps<a href=#passo-3--configurar-o-centralops class=hash-link aria-label="Link direto para Passo 3 — Configurar o CentralOps" title="Link direto para Passo 3 — Configurar o CentralOps" translate=no>​</a></h2>
+<p><strong>Recomendado — pela UI:</strong> como admin, vá a <strong>Configurações → Identidade & SSO</strong>
+(<code>/config</code>), preencha os campos abaixo e clique <strong>Salvar</strong>. O client secret é
+cifrado no banco e nunca exibido de volta; use <strong>Testar conexão</strong> para validar
+as credenciais. As alterações valem no próximo login, <strong>sem restart</strong>.</p>
+<p>As mesmas opções existem como variáveis <code>ENTRA_*</code> no <code>.env</code> — usadas apenas como
+<strong>seed</strong> da primeira subida (depois a UI é a fonte de verdade):</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Variável<th>Obrigatória<th>Descrição<tbody><tr><td><code>ENTRA_ENABLED</code><td>✓<td><code>true</code> para habilitar o botão e o fluxo<tr><td><code>ENTRA_TENANT_ID</code><td>✓<td>Directory (tenant) ID<tr><td><code>ENTRA_CLIENT_ID</code><td>✓<td>Application (client) ID<tr><td><code>ENTRA_CLIENT_SECRET</code><td>✓<td>Valor do client secret<tr><td><code>ENTRA_REDIRECT_URI</code><td>✓<td>Igual ao registrado no passo 1<tr><td><code>ENTRA_ROLE_MAP</code><td>—<td>JSON App Role → papel local<tr><td><code>ENTRA_DEFAULT_ROLE</code><td>—<td>Papel sem App Role correspondente (<code>viewer</code>)<tr><td><code>ENTRA_DEFAULT_IS_GLOBAL</code><td>—<td><code>true</code> dá escopo global a toda conta SSO<tr><td><code>ENTRA_JIT_PROVISIONING</code><td>—<td><code>true</code> cria a conta no 1º login<tr><td><code>ENTRA_ALLOWED_EMAIL_DOMAINS</code><td>—<td>Allowlist de domínios (CSV)<tr><td><code>ENTRA_BUTTON_LABEL</code><td>—<td>Texto do botão<tr><td><code>ENTRA_POST_LOGIN_REDIRECT</code><td>—<td>Destino após login (<code>/</code>)</table>
+<p>Exemplo do mapa de papéis:</p>
+<div class="language-bash codeBlockContainer_Ckt0 theme-code-block" style=--prism-color:#393A34;--prism-background-color:#f6f8fa><div class=codeBlockContent_QJqH><pre tabindex=0 class="prism-code language-bash codeBlock_bY9V thin-scrollbar" style=color:#393A34;background-color:#f6f8fa><code class=codeBlockLines_e6Vv><div class=token-line style=color:#393A34><span class="token assign-left variable" style=color:#36acaa>ENTRA_ROLE_MAP</span><span class="token operator" style=color:#393A34>=</span><span class="token punctuation" style=color:#393A34>{</span><span class="token string" style=color:#e3116c>"CentralOpsAdmin"</span><span class="token builtin class-name">:</span><span class="token string" style=color:#e3116c>"admin"</span><span class="token plain">,</span><span class="token string" style=color:#e3116c>"CentralOpsEngineer"</span><span class="token builtin class-name">:</span><span class="token string" style=color:#e3116c>"engineer"</span><span class="token plain">,</span><span class="token string" style=color:#e3116c>"CentralOpsOperator"</span><span class="token builtin class-name">:</span><span class="token string" style=color:#e3116c>"operator"</span><span class="token plain">,</span><span class="token string" style=color:#e3116c>"CentralOpsViewer"</span><span class="token builtin class-name">:</span><span class="token string" style=color:#e3116c>"viewer"</span><span class="token punctuation" style=color:#393A34>}</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token assign-left variable" style=color:#36acaa>ENTRA_DEFAULT_ROLE</span><span class="token operator" style=color:#393A34>=</span><span class="token plain">viewer</span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token comment" style=color:#999988;font-style:italic># SOC interno que monitora todos os clientes: dê escopo global por padrão.</span><span class="token plain"></span><br/></div><div class=token-line style=color:#393A34><span class="token plain"></span><span class="token assign-left variable" style=color:#36acaa>ENTRA_DEFAULT_IS_GLOBAL</span><span class="token operator" style=color:#393A34>=</span><span class="token plain">true</span><br/></div></code></pre></div></div>
+<p>Salve na UI (ou reinicie o backend, se configurou via <code>.env</code>). A tela de login
+passa a exibir <strong>"Entrar com Microsoft"</strong>.</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=como-funciona>Como funciona<a href=#como-funciona class=hash-link aria-label="Link direto para Como funciona" title="Link direto para Como funciona" translate=no>​</a></h2>
+<ol>
+<li class="">Usuário clica em <strong>Entrar com Microsoft</strong> → <code>GET /api/auth/sso/login</code>.</li>
+<li class="">O backend gera <code>state</code>/<code>nonce</code>/PKCE, persiste por 10 min e redireciona (302)
+para o Entra.</li>
+<li class="">Usuário autentica no Entra → retorna para <code>/api/auth/sso/callback?code&state</code>.</li>
+<li class="">O backend troca o <code>code</code> por tokens, <strong>valida o <code>id_token</code></strong> (assinatura via
+JWKS, <code>aud</code>, <code>exp</code>, <code>iss</code>, <code>nonce</code> e <code>tid</code> == tenant), e resolve a conta.</li>
+<li class="">Cria a sessão (mesmo cookie do login local) e redireciona para o app.</li>
+</ol>
+<h3 class="anchor anchorTargetStickyNavbar_Vzrq" id=provisionamento-e-papéis>Provisionamento e papéis<a href=#provisionamento-e-papéis class=hash-link aria-label="Link direto para Provisionamento e papéis" title="Link direto para Provisionamento e papéis" translate=no>​</a></h3>
+<ul>
+<li class=""><strong>JIT</strong> (<code>ENTRA_JIT_PROVISIONING=true</code>): a conta é criada no primeiro login,
+com <code>auth_provider="entra"</code>, sem senha. O papel vem do App Role (via
+<code>ENTRA_ROLE_MAP</code>); com vários App Roles, vence o de maior privilégio.</li>
+<li class="">A cada login os atributos (e-mail, nome, papel, escopo global) são
+<strong>reconciliados</strong> a partir do token — o Entra é a fonte de verdade.</li>
+<li class=""><strong>Escopo global</strong> (<code>is_global</code>): concedido a <code>admin</code> sempre, e às demais
+contas quando <code>ENTRA_DEFAULT_IS_GLOBAL=true</code>. Ver <a class="" href=/CentralOps-docs/1.7/administration/users-and-roles>Usuários e papéis</a>.</li>
+<li class="">Com <code>ENTRA_JIT_PROVISIONING=false</code>, a conta precisa existir antes (modo em que
+o provisionamento — Fase 2, SCIM/Graph-sync — governa o ciclo de vida).</li>
+</ul>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=segurança>Segurança<a href=#segurança class=hash-link aria-label="Link direto para Segurança" title="Link direto para Segurança" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>PKCE (S256)</strong> + <strong>state</strong> (anti-CSRF) + <strong>nonce</strong> (anti-replay), uso único.</li>
+<li class=""><strong>Single-tenant</strong>: tokens de outros tenants Microsoft são rejeitados (<code>tid</code>).</li>
+<li class=""><strong>Anti account-takeover</strong>: se o e-mail do Entra já pertence a outra conta
+(local ou outro sujeito), o login é recusado (<code>email_conflict</code>) em vez de
+vincular silenciosamente.</li>
+<li class=""><strong>Offboarding</strong>: desativar uma conta no CentralOps revoga imediatamente as
+sessões <strong>e os PATs</strong> (tokens de API) do usuário — não sobrevivem à desativação.</li>
+<li class=""><strong>Break-glass</strong>: o login local (usuário/senha) continua funcionando. Mantenha
+<strong>pelo menos um admin local</strong> para não ficar trancado fora caso o Entra
+fique indisponível.</li>
+</ul>
+<p>:::warning Same-origin
+Em produção, frontend e API são servidos no mesmo domínio (Nginx) — o cookie de
+sessão funciona direto. Em dev com portas separadas, ajuste
+<code>ENTRA_POST_LOGIN_REDIRECT</code> e sirva o app pela mesma origem do backend.
+:::</p>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=troubleshooting>Troubleshooting<a href=#troubleshooting class=hash-link aria-label="Link direto para Troubleshooting" title="Link direto para Troubleshooting" translate=no>​</a></h2>
+<p>Erros voltam para a tela de login como <code>/login?sso_error=&lt;código></code>:</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Código<th>Causa provável<th>Ação<tbody><tr><td><code>sso_disabled</code><td>SSO desligado ou incompleto<td>Confira <code>ENTRA_ENABLED</code> e os 4 campos obrigatórios<tr><td><code>discovery_failed</code><td>Backend não alcança o Entra<td>Verifique saída para <code>login.microsoftonline.com</code><tr><td><code>provider_error</code><td>Entra recusou (consentimento/atribuição)<td>Confirme atribuição do usuário ao app<tr><td><code>invalid_state</code><td>Fluxo expirou (>10 min) ou cookie perdido<td>Tente novamente<tr><td><code>invalid_token</code><td>Falha de validação (assinatura/aud/nonce/tid)<td>Confira <code>ENTRA_CLIENT_ID</code>/<code>ENTRA_TENANT_ID</code>/redirect<tr><td><code>email_not_allowed</code><td>Domínio fora da allowlist<td>Ajuste <code>ENTRA_ALLOWED_EMAIL_DOMAINS</code><tr><td><code>email_conflict</code><td>E-mail já usado por outra conta<td>Resolva a conta duplicada manualmente<tr><td><code>not_provisioned</code><td>JIT off e conta inexistente<td>Provisione a conta antes (ou ligue o JIT)<tr><td><code>user_inactive</code><td>Conta desativada no CentralOps<td>Reative em Usuários</table>
+<h2 class="anchor anchorTargetStickyNavbar_Vzrq" id=próximos-passos>Próximos passos<a href=#próximos-passos class=hash-link aria-label="Link direto para Próximos passos" title="Link direto para Próximos passos" translate=no>​</a></h2>
+<ul>
+<li class=""><strong>Lifecycle automático</strong> (criar/desativar via Entra): Fase 2 (SCIM via
+provisioning agent ou Graph-sync) — ver roadmap interno.</li>
+<li class=""><strong>Papéis e escopo global</strong>: <a class="" href=/CentralOps-docs/1.7/administration/users-and-roles>Usuários e papéis</a>.</li>
+</ul></div></article><nav class="docusaurus-mt-lg pagination-nav" aria-label="Páginas de documento"><a class="pagination-nav__link pagination-nav__link--prev" href=/CentralOps-docs/1.7/administration/users-and-roles><div class=pagination-nav__sublabel>Anterior</div><div class=pagination-nav__label>Usuários e papéis</div></a><a class="pagination-nav__link pagination-nav__link--next" href=/CentralOps-docs/1.7/administration/organizations><div class=pagination-nav__sublabel>Próxima</div><div class=pagination-nav__label>Organizações</div></a></nav></div></div><div class="col col--3"><div class="tableOfContents_bqdL thin-scrollbar theme-doc-toc-desktop"><ul class="table-of-contents table-of-contents__left-border"><li><a href=#passo-1--app-registration-no-entra class="table-of-contents__link toc-highlight">Passo 1 — App Registration no Entra</a><li><a href=#passo-2--app-roles-papéis class="table-of-contents__link toc-highlight">Passo 2 — App Roles (papéis)</a><li><a href=#passo-3--configurar-o-centralops class="table-of-contents__link toc-highlight">Passo 3 — Configurar o CentralOps</a><li><a href=#como-funciona class="table-of-contents__link toc-highlight">Como funciona</a><ul><li><a href=#provisionamento-e-papéis class="table-of-contents__link toc-highlight">Provisionamento e papéis</a></ul><li><a href=#segurança class="table-of-contents__link toc-highlight">Segurança</a><li><a href=#troubleshooting class="table-of-contents__link toc-highlight">Troubleshooting</a><li><a href=#próximos-passos class="table-of-contents__link toc-highlight">Próximos passos</a></ul></div></div></div></div></main></div></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Documentação</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/getting-started/overview>Começar</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/operations/dashboard>Operação diária</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/normalization/overview>Mappings (CML)</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/runbooks/dispatcher>Runbooks</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Plataforma</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/concepts/architecture>Arquitetura</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/concepts/rbac>RBAC</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/integrations/overview>Integrações</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/compliance/retention>Compliance</a></ul></div><div class="theme-layout-footer-column col footer__col"><div class=footer__title>Recursos</div><ul class="footer__items clean-list"><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/getting-started/quickstart>Quickstart</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/normalization/cookbook>DSL Cookbook</a><li class=footer__item><a class=footer__link-item href=/CentralOps-docs/normalization/troubleshooting>Troubleshooting</a></ul></div></div><div class="footer__bottom text--center"><div class=footer__copyright>Copyright © 2026 CentralOps. Built with Docusaurus.</div></div></div></footer></div></body>
